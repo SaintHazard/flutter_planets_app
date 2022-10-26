@@ -64,6 +64,12 @@ flutter:
 
     assets:
         - assets/images/mars.png
+        - assets/images/earth.png
+        - assets/images/ic_distance.png
+        - assets/images/ic_gravity.png
+        - assets/images/mercury.png
+        - assets/images/moon.png
+        - assets/images/neptune.png
 
     # An image asset can refer to one or more resolution-specific "variants", see
     # https://flutter.dev/assets-and-images/#resolution-aware
@@ -93,6 +99,8 @@ fonts:
       fonts:
           - asset: assets/fonts/Poppins-SemiBold.ttf
             weight: 600
+          - asset: assets/fonts/Poppins-Regular.ttf
+            weight: 400
 
     #
     # For details regarding fonts from package dependencies,

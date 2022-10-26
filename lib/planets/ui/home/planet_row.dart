@@ -1,16 +1,18 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_planets_app/planets/model/planet.dart';
+import 'package:flutter_planets_app/planets/ui/home/planet_card_content.dart';
 
 class PlanetRow extends StatelessWidget {
-  const PlanetRow({super.key});
+  final Planet planet;
+  const PlanetRow({super.key, required this.planet});
 
   @override
   Widget build(BuildContext context) {
     final planetThumbnail = Container(
       margin: const EdgeInsets.symmetric(vertical: 16),
       alignment: FractionalOffset.centerLeft,
-      child: const Image(
-        image: AssetImage("assets/images/mars.png"),
+      child: Image(
+        image: AssetImage(planet.image),
         height: 92.0,
         width: 92.0,
       ),
@@ -18,7 +20,9 @@ class PlanetRow extends StatelessWidget {
 
     final planetCard = Container(
       height: 124,
-      margin: const EdgeInsets.only(left: 46.0),
+      margin: const EdgeInsets.only(
+        left: 46.0,
+      ),
       decoration: BoxDecoration(
           color: const Color(0xFF333366),
           shape: BoxShape.rectangle,
@@ -34,7 +38,11 @@ class PlanetRow extends StatelessWidget {
     return Container(
       height: 120,
       margin: const EdgeInsets.symmetric(vertical: 16, horizontal: 24),
-      child: Stack(children: [planetCard, planetThumbnail]),
+      child: Stack(children: [
+        planetCard,
+        PlanetCardContent(planet: planet),
+        planetThumbnail
+      ]),
     );
   }
 }
